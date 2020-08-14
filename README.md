@@ -156,3 +156,75 @@ Content-Type: image/png
 
 <continues with the binary data>
 ```
+
+## cURL
+*cURL* is a command line tool useful to interact with URL identified resources, such as web pages and their assets. This tool greatly simplifies page downloading, as it is no longer required to manually write the HTTP request.
+
+To download a webpage with cURL we just do:
+```
+$ curl localhost/testpage.html
+``` 
+<details>
+  <summary>See response page</summary>
+  
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title> RCI Test Page </title>
+	<meta name="author" content="docente rci"/>
+	<meta name="description" content="Pagina di prova per lo studio del protocollo HTTP - Corso RCI"/>
+	<link rel="stylesheet" type="text/css" href="style_rci.css">
+</head>
+
+<body>
+<div class="striscione">
+
+<table class="tabella">
+<tr>
+	<td class="colonna_img">
+		<img src="img/logo-antlab.png" width="100" height="100" border="0" alt="LOGO_ANTLAB">
+	</td>
+	<td class="colonna_titolo">
+		<h1>
+			Corso di Reti di Comunicazione e Internet
+		</h1>
+	</td>
+	<td class="colonna_img">
+		<img src="img/logo_poli_small.png" width="100" height="98" border="0" alt="LOGO_POLIMI" align="right">
+	</td>
+</tr>
+</table>
+
+</div>
+
+<br><br><br><br>
+
+<div class="box">
+
+Questa e' una pagina di prova per testare il protocollo HTTP.<br>
+Contiene del testo e delle immagini.<br>
+<br><br>
+
+</div>
+
+</body>
+</html>
+```
+</details>
+
+To get from cURL only the head of the request, we can use
+```
+$ curl --head localhost/testpage.html
+HTTP/1.1 200 OK
+Date: Fri, 14 Aug 2020 13:41:49 GMT
+Server: Apache/2.4.12 (Ubuntu)
+Last-Modified: Thu, 17 Mar 2016 16:10:39 GMT
+ETag: "3fb-52e40df1cd8ac"
+Accept-Ranges: bytes
+Content-Length: 1019
+Vary: Accept-Encoding
+Content-Type: text/html
+```
+
